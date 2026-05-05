@@ -1,5 +1,7 @@
 package com.tw.step.rover.roversystem;
 
+import com.tw.step.rover.boundary.Boundary;
+import com.tw.step.rover.boundary.Plateau;
 import com.tw.step.rover.position.Coordinate;
 import com.tw.step.rover.position.Direction;
 import org.junit.jupiter.api.Test;
@@ -21,5 +23,14 @@ class RoverSystemScannerTest {
         assertEquals(Direction.N, directionScanner.scanDirection());
         assertEquals("X", consumeScanner.consume());
         assertNull(consumeScanner.consume());
+    }
+
+    @Test
+    void scanPlateau() {
+        RoverSystemScanner scanner = RoverSystemScanner.from("5 5\n1 2 N");
+        Coordinate bottomLeft = new Coordinate(0, 0);
+        Coordinate topRight = new Coordinate(5, 5);
+        Boundary plateau = new Plateau(bottomLeft, topRight);
+        assertEquals(plateau, scanner.scanPlateau());
     }
 }

@@ -26,6 +26,7 @@ public class RoverSystemScanner {
 
     public String consume() {
         String token = this.peek();
+        // use the isdone method instead
         if(this.currentIndex < this.tokens.length) {
             this.currentIndex++;
         }
@@ -52,10 +53,8 @@ public class RoverSystemScanner {
     }
 
     public Boundary scanPlateau() {
-        int topRightCoordX = this.scanNumber();
-        int topRightCoordY = this.scanNumber();
         Coordinate bottomLeft = new Coordinate(0, 0);
-        Coordinate topRight = new Coordinate(topRightCoordX, topRightCoordY);
+        Coordinate topRight = this.scanCoordinate();
         return new Plateau(bottomLeft,topRight);
     }
 }
