@@ -1,5 +1,7 @@
 package com.tw.step.rover.roversystem;
 
+import com.tw.step.rover.boundary.Boundary;
+import com.tw.step.rover.boundary.Plateau;
 import com.tw.step.rover.commands.RoverCommands;
 import com.tw.step.rover.position.Coordinate;
 import com.tw.step.rover.position.Direction;
@@ -47,5 +49,13 @@ public class RoverSystemScanner {
 
     public Direction scanDirection() {
         return Direction.valueOf(this.consume());
+    }
+
+    public Boundary scanPlateau() {
+        int topRightCoordX = this.scanNumber();
+        int topRightCoordY = this.scanNumber();
+        Coordinate bottomLeft = new Coordinate(0, 0);
+        Coordinate topRight = new Coordinate(topRightCoordX, topRightCoordY);
+        return new Plateau(bottomLeft,topRight);
     }
 }

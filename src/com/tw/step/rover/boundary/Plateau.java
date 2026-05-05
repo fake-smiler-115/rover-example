@@ -1,6 +1,7 @@
 package com.tw.step.rover.boundary;
 
 import com.tw.step.rover.position.Coordinate;
+import com.tw.step.rover.roversystem.RoverSystemScanner;
 
 public class Plateau implements Boundary {
     private final Coordinate bottomLeft;
