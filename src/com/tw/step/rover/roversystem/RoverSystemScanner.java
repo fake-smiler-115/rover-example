@@ -52,9 +52,4 @@ public class RoverSystemScanner {
         return Direction.valueOf(this.consume());
     }
 
-    public Boundary scanPlateau() {
-        Coordinate bottomLeft = new Coordinate(0, 0);
-        Coordinate topRight = this.scanCoordinate();
-        return new Plateau(bottomLeft,topRight);
-    }
 }

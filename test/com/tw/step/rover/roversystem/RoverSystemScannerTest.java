@@ -25,12 +25,4 @@ class RoverSystemScannerTest {
         assertNull(consumeScanner.consume());
     }
 
-    @Test
-    void scanPlateau() {
-        RoverSystemScanner scanner = RoverSystemScanner.from("5 5\n1 2 N");
-        Coordinate bottomLeft = new Coordinate(0, 0);
-        Coordinate topRight = new Coordinate(5, 5);
-        Boundary plateau = new Plateau(bottomLeft, topRight);
-        assertEquals(plateau, scanner.scanPlateau());
-    }
 }
