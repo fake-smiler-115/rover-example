@@ -18,7 +18,7 @@ class RoverSystemParserTest {
         RoverSystem roverSystem = parser.parse();
         roverSystem.execute();
 
-        assertEquals("3 2 E", roverSystem.toString());
+        assertEquals("3 2 E ALIVE", roverSystem.toString());
     }
 
     @Test
